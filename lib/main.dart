@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         create: (context) => Auth(),
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Maximize your productivity on your homestead by joining now',
+          title: 'Maximize your productivity by joining now',
           theme: ThemeData(
             primarySwatch: colorCustomGrey,
             bottomAppBarColor: colorCustomGrey,

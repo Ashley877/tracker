@@ -35,7 +35,7 @@ class _State extends State<LoginView> {
         ? Loading()
         : Scaffold(
             appBar: AppBar(
-              title: Text("Homestead Tracker"),
+              title: Text("Tracker"),
             ),
             body: Center(
               child: new SingleChildScrollView(
@@ -57,7 +57,7 @@ class _State extends State<LoginView> {
                         alignment: Alignment.center,
                         padding: EdgeInsets.all(10),
                         child: Text(
-                          'Maximize your productivity\n on your homestead\n by joining now',
+                          'Maximize your productivity by joining now',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: colorCustomOrange,

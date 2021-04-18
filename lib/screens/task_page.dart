@@ -184,8 +184,6 @@ class _TodosPageState extends State<TodosPage> {
       onDismissed: (direction) {
         _deleteTask(todos);
       },
-      //key: UniqueKey,
-      //foregroundDecoration: BoxDecoration(color: Color(0x60FDFDFD)),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 12.0),
         child: Row(

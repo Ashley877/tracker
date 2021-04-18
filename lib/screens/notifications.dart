@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tracker/constants/tokens/colors.dart';
 import 'package:tracker/screens/home.dart';
 import 'package:tracker/screens/household_invite.dart';
+import 'package:tracker/screens/profile.dart';
 import '../screens/authenticate/login.dart';
 import '../services/auth.dart';
 
@@ -14,53 +15,15 @@ class NotificationsView extends StatefulWidget {
 
 class _State extends State<NotificationsView> {
   final AuthBase _firebaseAuth = Auth();
+  final AuthBase _auth = Auth();
+
   var _alerts = false;
   var _familychange = false;
   var _anychange = false;
 
   @override
 
-//         body: Center(
-//           child: new SingleChildScrollView(
-//             child: Column(
-//               mainAxisSize: MainAxisSize.min,
-//               children: <Widget>[
-//                 Container(
-//                   height: 16.0,
-//                   padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-//                 ),
-//                 Container(
-//                     width: loginContentWidth,
-//                     alignment: Alignment.center,
-//                     padding: EdgeInsets.all(10),
-//                     child: Text(
-//                       'NOTIFICATIONS',
-//                       textAlign: TextAlign.center,
-//                       style: TextStyle(
-//                           color: colorCustomOrange,
-//                           fontWeight: FontWeight.w500,
-//                           fontSize: 20),
-//                     )),
-//                 Container(
-//                   height: 16.0,
-//                   padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-//                 ),
-//                 Container(
-//                   height: 16.0,
-//                 ),
-//                 MyStatefulWidget(),
-//                 Container(
-//                   width: loginContentWidth,
-//                   height: 24.0,
-//                   // padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ));
-//   }
-// }
-
+//
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -78,11 +41,7 @@ class _State extends State<NotificationsView> {
           ],
         ),
         drawer: Drawer(
-          // Add a ListView to the drawer. This ensures the user can scroll
-          // through the options in the drawer if there isn't enough vertical
-          // space to fit everything.
           child: ListView(
-            // Important: Remove any padding from the ListView.
             padding: EdgeInsets.zero,
             children: <Widget>[
               DrawerHeader(
@@ -93,7 +52,10 @@ class _State extends State<NotificationsView> {
               ),
               ListTile(
                 title: Text('ACCOUNT'),
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (BuildContext context) => Profile()));
+                },
               ),
               ListTile(
                   title: Text('HOUSEHOLD'),
@@ -109,26 +71,9 @@ class _State extends State<NotificationsView> {
                 },
               ),
               ListTile(
-                title: Text('FAQ'),
-                onTap: () {},
-              ),
-              ListTile(
-                title: Text('RESOURCES'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                title: Text('ARCHIVED'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
                 title: Text('SIGN OUT'),
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => LoginView()));
+                onTap: () async {
+                  await _auth.signOut();
                 },
               ),
             ],

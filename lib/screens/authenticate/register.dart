@@ -27,7 +27,7 @@ class _RegisterState extends State<RegisterView> {
         ? Loading()
         : Scaffold(
             appBar: AppBar(
-              title: Text("Homestead Tracker"),
+              title: Text("Tracker"),
             ),
             body: Center(
               child: new SingleChildScrollView(
@@ -40,9 +40,6 @@ class _RegisterState extends State<RegisterView> {
                     ),
                     Container(
                       padding: EdgeInsets.all(10),
-                      child: Image(
-                        image: AssetImage('assets/images/house.png'),
-                      ),
                     ),
                     Container(
                         width: loginContentWidth,

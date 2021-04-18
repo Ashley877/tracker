@@ -8,6 +8,7 @@ import 'package:tracker/screens/add_task.dart';
 import 'package:tracker/screens/household_invite.dart';
 import 'package:tracker/screens/new_todo.dart';
 import 'package:tracker/screens/notifications.dart';
+import 'package:tracker/screens/profile.dart';
 import 'package:tracker/services/database.dart';
 import 'package:tracker/widgets/custom_button.dart';
 import '../services/auth.dart';
@@ -82,7 +83,10 @@ class _HomePageState extends State<HomePage> {
                 ),
                 ListTile(
                   title: Text('ACCOUNT'),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) => Profile()));
+                  },
                 ),
                 ListTile(
                     title: Text('HOUSEHOLD'),
@@ -97,20 +101,6 @@ class _HomePageState extends State<HomePage> {
                         builder: (BuildContext context) =>
                             NotificationsView()));
                   },
-                ),
-                ListTile(
-                  title: Text('FAQ'),
-                  onTap: () {},
-                ),
-                ListTile(
-                  title: Text('RESOURCES'),
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                ),
-                ListTile(
-                  title: Text('ARCHIVED'),
-                  onTap: () {},
                 ),
                 ListTile(
                   title: Text('SIGN OUT'),

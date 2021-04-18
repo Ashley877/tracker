@@ -1,6 +1,3 @@
-import 'dart:io';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:meta/meta.dart';
@@ -58,24 +55,24 @@ createListofLivestock(QuerySnapshot snapshot) async {
   }
 }
 
-deleteLivestock(Livestock livestock, Function animalDeleted) async {
-  if (livestock.profilePic != null) {
-    Reference storageReference =
-        await FirebaseStorage.instance.refFromURL(livestock.profilePic);
+// deleteLivestock(Livestock livestock, Function animalDeleted) async {
+//  // if (livestock.profilePic != null) {
+//     Reference storageReference =
+//      //   await FirebaseStorage.instance.refFromURL(livestock.profilePic);
 
-    // print(storageReference.path);
+//     // print(storageReference.path);
 
-    await storageReference.delete();
+//    // await storageReference.delete();
 
-    print('image deleted');
-  }
+//    // print('image deleted');
+//   }
 
-  await FirebaseFirestore.instance
-      .collection('Animals')
-      .doc(livestock.id)
-      .delete();
-  animalDeleted(livestock);
-}
+//   await FirebaseFirestore.instance
+//       .collection('Animals')
+//       .doc(livestock.id)
+//       .delete();
+//   animalDeleted(livestock);
+// }
 
 class DatabaseService {
   final String uid;

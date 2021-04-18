@@ -70,8 +70,7 @@ class _AnimalListPageState extends State<AnimalListPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) =>
-                        LivestockProfile(livestock: livestock),
+                    builder: (context) => Profile(livestock: livestock),
                   ),
                 );
               })

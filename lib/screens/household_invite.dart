@@ -18,7 +18,7 @@ class _State extends State<HouseholdView> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Homestead Tracker"),
+          title: Text("Tracker"),
           actions: <Widget>[
             IconButton(
               icon: Icon(
